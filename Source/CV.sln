@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CV.Android", "CV\CV.Android\CV.Android.csproj", "{E77DD34D-B7A1-452C-8C9C-A2753CB98B55}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CV.Droid", "CV\CV.Android\CV.Droid.csproj", "{E77DD34D-B7A1-452C-8C9C-A2753CB98B55}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CV.iOS", "CV\CV.iOS\CV.iOS.csproj", "{4096EEAA-A729-4E29-8665-A8DD214790E0}"
 EndProject
