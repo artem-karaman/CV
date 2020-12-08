@@ -24,10 +24,10 @@ jobs:
   Android:
     runs-on: ubuntu-latest 
     steps:
-     - name: Generate Xamarin Form Android APK
+     - name: Generate Xamarin Form Android APK - test
        uses: fahimshahrierrasel/Xamarin-Droid-Builder@1.0.2
        with:
-         SOLUTION_NAME: Source/CV
+         SOLUTION_NAME: CV
          ANDROID_PROJECT_NAME: CV.Android
    
         
