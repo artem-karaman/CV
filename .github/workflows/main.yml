@@ -27,7 +27,7 @@ jobs:
      - name: Generate Xamarin Form Android APK
        uses: fahimshahrierrasel/Xamarin-Droid-Builder@1.0.2
        with:
-         SOLUTION_NAME: Source/CV
+         SOLUTION_NAME: CV
          ANDROID_PROJECT_NAME: CV.Android
    
         
