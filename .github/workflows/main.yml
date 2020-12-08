@@ -29,6 +29,9 @@ jobs:
     steps:
      - name: Generate Xamarin Form Android APK
        uses: fahimshahrierrasel/Xamarin-Droid-Builder@1.0.2
+       with:
+         SOLUTION_NAME: ${{secrets.SOLUTION_NAME}}
+         ANDROID_PROJECT_NAME: ${{secrets.ANDROID_PROJECT_NAME}}
         
   iOS:
     runs-on: macos-latest
