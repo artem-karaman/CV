@@ -1,9 +1,6 @@
 name: CI on Push and Pull Request
 
 on: [push, pull_request]
-env:
-  SOLUTION_NAME: ${{secrets.SOLUTION_NAME}}
-  ANDROID_PROJECT_NAME: ${{secrets.ANDROID_PROJECT_NAME}}
 
 jobs:
   Practice:
@@ -30,8 +27,8 @@ jobs:
      - name: Generate Xamarin Form Android APK
        uses: fahimshahrierrasel/Xamarin-Droid-Builder@1.0.2
        with:
-         SOLUTION_NAME: ${{secrets.SOLUTION_NAME}}
-         ANDROID_PROJECT_NAME: ${{secrets.ANDROID_PROJECT_NAME}}
+         SOLUTION_NAME: Source/CV
+         ANDROID_PROJECT_NAME: CV.Android
         
   iOS:
     runs-on: macos-latest
