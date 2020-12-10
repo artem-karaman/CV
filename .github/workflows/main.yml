@@ -2,6 +2,10 @@ name: CI on Push and Pull Request
 
 on: [push, pull_request]
 
+env:
+  SOLUTION_NAME: CV
+  ANDROID_PROJECT_NAME: CV.Android
+
 jobs:
   Practice:
     runs-on: macos-latest
@@ -22,13 +26,23 @@ jobs:
         ls
         
   Android:
-    runs-on: ubuntu-latest 
+    name: Build APK
+    runs-on: ubuntu-latest
     steps:
-     - name: Generate Xamarin Form Android APK - test
-       uses: fahimshahrierrasel/Xamarin-Droid-Builder@1.0.2
-       with:
-         SOLUTION_NAME: CV
-         ANDROID_PROJECT_NAME: CV.Android
+      - uses: actions/checkout@master
+      - name: Building APK
+        uses: ./action
+        with:
+          args: /r:True /t:SignAndroidPackage /p:AndroidSdkDirectory=/android/sdk ${{env.SOLUTION_NAME}}/${{env.ANDROID_PROJECT_NAME}}/${{env.ANDROID_PROJECT_NAME}}.csproj
+      - name: Artifacts
+        run: |
+          mkdir -p apks
+          cp ${{env.SOLUTION_NAME}}/${{env.ANDROID_PROJECT_NAME}}/bin/Debug/*.apk apks
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v1
+        with:
+          name: apks
+          path: apks
    
         
   iOS:
