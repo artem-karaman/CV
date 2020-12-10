@@ -22,15 +22,14 @@ jobs:
         ls
         
   Android:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest 
     steps:
-    - uses: actions/checkout@v1
-    - name: Android
-      run: |
-        cd Source
-        nuget restore
-        cd CV/CV.Android
-        msbuild CV.Android.csproj /verbosity:normal /t:Rebuild /p:Configuration=Debug
+     - name: Generate Xamarin Form Android APK - test
+       uses: fahimshahrierrasel/Xamarin-Droid-Builder@1.0.2
+       with:
+         SOLUTION_NAME: CV
+         ANDROID_PROJECT_NAME: CV.Android
+   
         
   iOS:
     runs-on: macos-latest
