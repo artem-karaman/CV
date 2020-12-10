@@ -51,6 +51,5 @@ jobs:
     - uses: actions/checkout@v1
     - name: iOS
       run: |
-        cd Source
         nuget restore
         msbuild CV/CV.iOS/CV.iOS.csproj /verbosity:normal /t:Rebuild /p:Platform=iPhoneSimulator /p:Configuration=Debug
